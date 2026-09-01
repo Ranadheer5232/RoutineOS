@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-routines-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.my-routines-main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.my-routines-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+
+.my-routines-header h1 {
+  font-size: 30px;
+  color: #111827;
+  margin: 0 0 8px;
+}
+
+.my-routines-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.my-routines-add-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.my-routines-add-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.my-routines-loading {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 50px;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.my-routines-empty {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 70px 30px;
+  text-align: center;
+}
+
+.my-routines-empty-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.my-routines-empty h2 {
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.my-routines-empty p {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   ROUTINE GRID
+========================= */
+
+.my-routines-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.my-routine-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 22px;
+  transition: all 0.2s ease;
+}
+
+.my-routine-card:hover {
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.my-routine-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.my-routine-card h2 {
+  color: #111827;
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.my-routine-description {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.my-routine-frequency {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* =========================
+   SCHEDULE & TASK COUNT
+========================= */
+
+.my-routine-schedule,
+.my-routine-task-count {
+  background: #f8fafc;
+  border-radius: 9px;
+  padding: 11px 12px;
+  margin-top: 10px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.my-routine-task-count {
+  background: #f0fdf4;
+  color: #166534;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.my-routine-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.my-routine-edit-btn,
+.my-routine-delete-btn {
+  flex: 1;
+  padding: 11px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.my-routine-edit-btn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.my-routine-edit-btn:hover {
+  background: #dbeafe;
+}
+
+.my-routine-delete-btn {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.my-routine-delete-btn:hover {
+  background: #fee2e2;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .my-routines-main {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .my-routines-page {
+    flex-direction: column;
+  }
+
+  .my-routines-main {
+    padding: 20px;
+  }
+
+  .my-routines-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .my-routines-add-btn {
+    width: 100%;
+  }
+
+  .my-routines-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MY ROUTINES DARK MODE
+========================= */
+
+body.dark-mode .my-routines-page {
+  background: #111827;
+}
+
+/* HEADER */
+
+body.dark-mode .my-routines-header h1 {
+  color: #f9fafb;
+}
+
+body.dark-mode .my-routines-header p {
+  color: #9ca3af;
+}
+
+/* LOADING */
+
+body.dark-mode .my-routines-loading {
+  background: #1f2937;
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+/* EMPTY STATE */
+
+body.dark-mode .my-routines-empty {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .my-routines-empty h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode .my-routines-empty p {
+  color: #9ca3af;
+}
+
+/* ROUTINE CARDS */
+
+body.dark-mode .my-routine-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .my-routine-card:hover {
+  border-color: #60a5fa;
+}
+
+body.dark-mode .my-routine-card h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode .my-routine-description {
+  color: #9ca3af;
+}
+
+/* FREQUENCY BADGE */
+
+body.dark-mode .my-routine-frequency {
+  background: #1e3a5f;
+  color: #60a5fa;
+}
+
+/* SCHEDULE */
+
+body.dark-mode .my-routine-schedule {
+  background: #273449;
+  color: #d1d5db;
+}
+
+body.dark-mode .my-routine-task-count {
+  background: #163524;
+  color: #86efac;
+}
+
+/* ACTION BUTTONS */
+
+body.dark-mode .my-routine-edit-btn {
+  background: #1e3a5f;
+  border-color: #2563eb;
+  color: #93c5fd;
+}
+
+body.dark-mode .my-routine-edit-btn:hover {
+  background: #254b75;
+}
+
+body.dark-mode .my-routine-delete-btn {
+  background: #3f1d1d;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+body.dark-mode .my-routine-delete-btn:hover {
+  background: #4c1d1d;
+}
+
+/* =========================
+   CATEGORY TABS & BADGES
+========================= */
+
+.my-routines-category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.cat-tab-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #4b5563;
+  padding: 7px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cat-tab-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.cat-tab-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.my-routine-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.my-routine-cat-badge {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Dark Mode Category */
+
+body.dark-mode .cat-tab-btn {
+  background: #1f2937;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+body.dark-mode .cat-tab-btn:hover {
+  background: #374151;
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+
+body.dark-mode .cat-tab-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .my-routine-cat-badge {
+  background: #1e3a5f;
+  border-color: #2563eb;
+  color: #93c5fd;
+}

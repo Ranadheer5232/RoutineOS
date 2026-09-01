@@ -1,0 +1,171 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #f5f7fb;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.auth-logo h1 {
+  font-size: 26px;
+}
+
+.auth-header {
+  margin-bottom: 28px;
+}
+
+.auth-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  color: #6b7280;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+}
+
+.auth-button {
+  margin-top: 5px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-button:hover {
+  background: #1d4ed8;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  color: #6b7280;
+}
+
+.auth-switch a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #2563eb;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .auth-page {
+  background: #1f2937;
+}
+
+body.dark-mode .auth-card {
+  background: #273548;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .auth-logo h1 {
+  color: #f9fafb;
+}
+
+body.dark-mode .auth-header h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode .auth-header p {
+  color: #aeb8c7;
+}
+
+body.dark-mode .form-group label {
+  color: #e5e7eb;
+}
+
+body.dark-mode .form-group input {
+  background: #1f2937;
+  border-color: #475569;
+  color: #f9fafb;
+}
+
+body.dark-mode .form-group input::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-mode .form-group input:focus {
+  border-color: #3b82f6;
+}
+
+body.dark-mode .auth-switch {
+  color: #aeb8c7;
+}
+
+body.dark-mode .auth-switch a {
+  color: #60a5fa;
+}
+
+body.dark-mode .auth-message {
+  color: #60a5fa;
+}

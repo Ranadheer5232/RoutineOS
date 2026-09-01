@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #1f2937;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* =========================
+   DARK MODE - GLOBAL
+========================= */
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode .dashboard {
+  background: #111827;
+}
+
+body.dark-mode .sidebar {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .sidebar-logo h2,
+body.dark-mode .dashboard-header h1,
+body.dark-mode .stat-card h2,
+body.dark-mode .daily-progress-header h2,
+body.dark-mode .section-header h2,
+body.dark-mode .routine-card h3,
+body.dark-mode .routine-tasks h4 {
+  color: #f9fafb;
+}
+
+body.dark-mode .date-text,
+body.dark-mode .welcome-text,
+body.dark-mode .stat-card p,
+body.dark-mode .daily-progress-header p,
+body.dark-mode .section-header p,
+body.dark-mode .routine-card p,
+body.dark-mode .task-item span {
+  color: #9ca3af;
+}
+
+body.dark-mode .nav-item {
+  color: #d1d5db;
+}
+
+body.dark-mode .nav-item:hover {
+  background: #374151;
+}
+
+body.dark-mode .nav-item.active {
+  background: #1e3a5f;
+  color: #60a5fa;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .daily-progress-card,
+body.dark-mode .routines-section,
+body.dark-mode .routine-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .task-item {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .task-item:hover {
+  background: #273449;
+  border-color: #3b82f6;
+}
+
+body.dark-mode .dashboard-progress-bar {
+  background: #374151;
+}
+
+body.dark-mode .logout-button {
+  color: #f87171;
+}
+
+body.dark-mode .logout-button:hover {
+  background: #3f2025;
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+
+.theme-toggle {
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.theme-toggle:hover {
+  background: #f3f4f6;
+}
+
+body.dark-mode .theme-toggle {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #4b5563;
+}
+/* =========================
+   GLOBAL DARK MODE
+========================= */
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+/* =========================
+   GLOBAL DARK MODE
+========================= */
+
+body {
+  margin: 0;
+  background: #f5f7fb;
+  color: #111827;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* =========================
+   GLOBAL DARK MODE COLORS
+========================= */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #1f2937;
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #9ca3af;
+}
+
+body.dark-mode button {
+  transition: background 0.2s ease, color 0.2s ease;
+}

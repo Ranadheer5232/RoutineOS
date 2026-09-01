@@ -1,0 +1,733 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.history-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+.history-main {
+  flex: 1;
+  padding: 40px;
+  box-sizing: border-box;
+  max-width: 1400px;
+  overflow-y: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.history-header {
+  margin-bottom: 28px;
+}
+
+.history-header h1 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 30px;
+}
+
+.history-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* =========================
+   TOP SECTION GRID
+========================= */
+
+.history-top-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.history-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   CALENDAR TRACKER CARD
+========================= */
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.calendar-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.cal-nav-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cal-nav-btn:hover {
+  background: #f3f4f6;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.today-cal-btn {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+/* Calendar Weekday Names */
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+/* Calendar Days Grid */
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  min-height: 40px;
+  border: 1px solid #f1f5f9;
+  background: #ffffff;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.calendar-cell.empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.calendar-cell:hover:not(:disabled):not(.empty) {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.calendar-cell.selected {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.calendar-cell.selected .cal-day-number {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.calendar-cell.today:not(.selected) {
+  border-color: #3b82f6;
+  font-weight: 700;
+}
+
+.calendar-cell.future {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cal-day-number {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* Status Dots */
+
+.cal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.dot-complete {
+  background: #16a34a;
+}
+
+.dot-partial {
+  background: #f59e0b;
+}
+
+.dot-missed {
+  background: #ef4444;
+}
+
+.calendar-cell.selected .cal-dot {
+  background: #ffffff;
+}
+
+/* Calendar Legend */
+
+.calendar-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =========================
+   DATE QUICK CARD
+========================= */
+
+.date-quick-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.date-card-title h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.selected-date-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.date-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.date-input-wrapper label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.date-input-field {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+}
+
+.date-input-field:focus {
+  border-color: #2563eb;
+}
+
+/* Quick Action Buttons */
+
+.date-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.date-nav-btn,
+.quick-pill-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.date-nav-btn:hover,
+.quick-pill-btn:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.quick-pill-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.date-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Day Stats Pills */
+
+.day-stats-pill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: auto;
+}
+
+.day-stat-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-stat-box span {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.day-stat-box strong {
+  font-size: 18px;
+  color: #111827;
+}
+
+/* =========================
+   RESULT BANNER CARD
+========================= */
+
+.history-result-card {
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.history-result-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.history-result-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.history-result-card p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.history-result-excellent {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.history-result-good {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.history-result-low {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #c2410c;
+}
+
+.history-result-empty {
+  background: #f8fafc;
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+/* =========================
+   PROGRESS SUMMARY CARD
+========================= */
+
+.progress-summary-card {
+  padding: 18px 24px;
+  margin-bottom: 24px;
+}
+
+.progress-summary-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.progress-summary-header strong {
+  color: #111827;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.progress-complete {
+  background: #16a34a;
+}
+
+.progress-medium {
+  background: #2563eb;
+}
+
+.progress-low {
+  background: #f59e0b;
+}
+
+/* =========================
+   ROUTINES SECTION
+========================= */
+
+.history-routines-section {
+  margin-top: 10px;
+}
+
+.section-title-row {
+  margin-bottom: 16px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #111827;
+}
+
+.history-routine-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.history-routine-item-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.history-item-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  gap: 12px;
+}
+
+.history-item-header h3 {
+  margin: 0 0 3px;
+  font-size: 16px;
+  color: #111827;
+}
+
+.history-item-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.history-freq-pill {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* Task Rows */
+
+.history-tasks-list {
+  padding: 8px 20px;
+}
+
+.history-task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.history-task-row:last-child {
+  border-bottom: none;
+}
+
+.task-status-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.task-done .task-status-icon {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
+
+.task-missed .task-status-icon {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.task-title-text {
+  font-size: 14px;
+  color: #374151;
+  flex: 1;
+}
+
+.task-done .task-title-text {
+  color: #4b5563;
+}
+
+.task-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.task-done .task-badge {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.task-missed .task-badge {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Empty / Loading States */
+
+.history-empty-card,
+.history-loading-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 45px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-emoji {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+  .history-top-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .history-page {
+    flex-direction: column;
+  }
+
+  .history-main {
+    padding: 20px 15px;
+  }
+
+  .calendar-weekdays span {
+    font-size: 10px;
+  }
+
+  .calendar-cell {
+    min-height: 34px;
+  }
+
+  .cal-day-number {
+    font-size: 11px;
+  }
+
+  .day-stats-pill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode .history-page {
+  background: #111827;
+}
+
+body.dark-mode .history-header h1,
+body.dark-mode .calendar-header h3,
+body.dark-mode .date-card-title h3,
+body.dark-mode .section-title-row h2,
+body.dark-mode .history-item-header h3,
+body.dark-mode .day-stat-box strong,
+body.dark-mode .progress-summary-header strong {
+  color: #f9fafb;
+}
+
+body.dark-mode .history-header p,
+body.dark-mode .date-input-wrapper label,
+body.dark-mode .calendar-weekdays,
+body.dark-mode .legend-item span,
+body.dark-mode .history-item-header p,
+body.dark-mode .progress-summary-header span,
+body.dark-mode .day-stat-box span {
+  color: #9ca3af;
+}
+
+body.dark-mode .history-card,
+body.dark-mode .history-routine-item-card,
+body.dark-mode .history-empty-card,
+body.dark-mode .history-loading-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .calendar-cell {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .calendar-cell:hover:not(:disabled):not(.empty) {
+  background: #273549;
+  border-color: #3b82f6;
+}
+
+body.dark-mode .cal-day-number {
+  color: #d1d5db;
+}
+
+body.dark-mode .calendar-cell.selected {
+  background: #2563eb;
+}
+
+body.dark-mode .cal-nav-btn,
+body.dark-mode .date-nav-btn,
+body.dark-mode .quick-pill-btn {
+  background: #1f2937;
+  border-color: #475569;
+  color: #e5e7eb;
+}
+
+body.dark-mode .cal-nav-btn:hover,
+body.dark-mode .date-nav-btn:hover,
+body.dark-mode .quick-pill-btn:hover {
+  background: #374151;
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+
+body.dark-mode .quick-pill-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .date-input-field {
+  background: #111827;
+  border-color: #475569;
+  color: #f9fafb;
+}
+
+body.dark-mode .day-stat-box {
+  background: #111827;
+  border-color: #374151;
+}
+
+body.dark-mode .history-item-header,
+body.dark-mode .history-task-row {
+  border-bottom-color: #374151;
+}
+
+body.dark-mode .task-title-text {
+  color: #e5e7eb;
+}
+
+body.dark-mode .history-freq-pill {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+body.dark-mode .progress-bar-track {
+  background: #374151;
+}
+
+body.dark-mode .history-result-empty {
+  background: #1f2937;
+  border-color: #374151;
+  color: #d1d5db;
+}
