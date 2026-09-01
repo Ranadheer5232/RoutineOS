@@ -20,31 +20,7 @@ connectDB();
 // MIDDLEWARE
 // =========================
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:3000",
-  process.env.CLIENT_URL,
-].filter(Boolean);
-
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, or Postman)
-      if (!origin) return callback(null, true);
-      // Allow if origin is in whitelist or if CLIENT_URL is not set / wildcard
-      if (
-        allowedOrigins.length === 0 ||
-        allowedOrigins.includes(origin) ||
-        origin.endsWith(".vercel.app") ||
-        origin.endsWith(".netlify.app")
-      ) {
-        return callback(null, true);
-      }
-      return callback(null, true); // Permissive CORS for seamless deployment
-    },
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 // =========================
