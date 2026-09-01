@@ -21,6 +21,11 @@ connectDB();
 // =========================
 
 app.use(cors());
+app.use((req, res, next) => {
+  // Normalize consecutive slashes in request URLs (e.g., //api/auth -> /api/auth)
+  req.url = req.url.replace(/\/{2,}/g, "/");
+  next();
+});
 app.use(express.json());
 
 // =========================
